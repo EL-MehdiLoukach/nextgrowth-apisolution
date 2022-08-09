@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "5124b11b-dfe5-4bed-9bd2-cbc423c8bd40",
+		"name": "Nextgrowth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9973801"
+	},
+	"item": [
+		{
+			"name": "GET_ALL_PRODUCTS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvdWthY2hlbG1laGRpQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91a2FjaCIsIl9pZCI6IjYyZjI3OTRkM2Y1YzZkMTc4YTlhMTFiYiIsImlhdCI6MTY2MDA1ODAxM30.MtNxkfG77VmHXUO33d3Oqa0zNwPKe5Y-Z25ZHt8w2mM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/product/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_ONE_PRODUCT_BY_ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvdWthY2hlbG1laGRpQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91a2FjaCIsIl9pZCI6IjYyZjI3OTRkM2Y1YzZkMTc4YTlhMTFiYiIsImlhdCI6MTY2MDA1ODAxM30.MtNxkfG77VmHXUO33d3Oqa0zNwPKe5Y-Z25ZHt8w2mM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/product/62f11cef89035caf39d7bad1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"62f11cef89035caf39d7bad1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_NEW_PRODUCT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvdWthY2hlbG1laGRpQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91a2FjaCIsIl9pZCI6IjYyZjI3OTRkM2Y1YzZkMTc4YTlhMTFiYiIsImlhdCI6MTY2MDA1ODAxM30.MtNxkfG77VmHXUO33d3Oqa0zNwPKe5Y-Z25ZHt8w2mM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"reference\" : \"ref2\",\n    \"name\" : \"MAC BOOK AIR - Intel\",\n    \"description\" : \"Awesome computer for designers\",\n    \"image\" : \"imgUrlGoesHere\",\n    \"variants\" : [\n        {\n            \"sku\" : \"SKU2\",\n            \"specification\":\"black mac\",\n            \"price\":2000\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/product/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH_PRODUCT_BY_ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvdWthY2hlbG1laGRpQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91a2FjaCIsIl9pZCI6IjYyZjI3OTRkM2Y1YzZkMTc4YTlhMTFiYiIsImlhdCI6MTY2MDA1ODAxM30.MtNxkfG77VmHXUO33d3Oqa0zNwPKe5Y-Z25ZHt8w2mM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"reference\" : \"ref1\",\n    \"name\" : \"MAC BOOK PRO - M1\",\n    \"description\" : \"Awesome computer for programmers\",\n    \"image\" : \"imgUrlGoesHere\",\n    \"variants\" : \n        {\n            \"sku\" : \"SKU1\",\n            \"specification\":\"white mac\",\n            \"price\":1900\n        }\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/product/62f11cef89035caf39d7bad1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"62f11cef89035caf39d7bad1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_PRODUCT_BY_ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvdWthY2hlbG1laGRpQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91a2FjaCIsIl9pZCI6IjYyZjI3OTRkM2Y1YzZkMTc4YTlhMTFiYiIsImlhdCI6MTY2MDA1ODAxM30.MtNxkfG77VmHXUO33d3Oqa0zNwPKe5Y-Z25ZHt8w2mM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/product/62f264a493c5e7ac32be2352",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"62f264a493c5e7ac32be2352"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_PRODUCT_VARIANTS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvdWthY2hlbG1laGRpQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91a2FjaCIsIl9pZCI6IjYyZjI3OTRkM2Y1YzZkMTc4YTlhMTFiYiIsImlhdCI6MTY2MDA1ODAxM30.MtNxkfG77VmHXUO33d3Oqa0zNwPKe5Y-Z25ZHt8w2mM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/product/62f11cef89035caf39d7bad1/variants",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"62f11cef89035caf39d7bad1",
+						"variants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_ONE_PRODUCT_VARIANT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvdWthY2hlbG1laGRpQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91a2FjaCIsIl9pZCI6IjYyZjI3OTRkM2Y1YzZkMTc4YTlhMTFiYiIsImlhdCI6MTY2MDA1ODAxM30.MtNxkfG77VmHXUO33d3Oqa0zNwPKe5Y-Z25ZHt8w2mM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/v1/product/62f11cef89035caf39d7bad1/variants/62f266056e24723899488e11",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"62f11cef89035caf39d7bad1",
+						"variants",
+						"62f266056e24723899488e11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER_NEW_USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "loukach",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "loukachelmehdi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ABC123EFG456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN_USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "loukachelmehdi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ABC123EFG456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
