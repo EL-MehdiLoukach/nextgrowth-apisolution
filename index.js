@@ -7,7 +7,12 @@ const dotenv = require('dotenv');
 // General Configuration
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    credentials: true,
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    origin: ["http://localhost:3000" /*"https://NAMEPROJECT.netlify.app"*/],
+}));
+app.use(require("helmet")());
 const PORT = process.env.PORT || 3000
 // Database instance
 const connectDB = require('./config/database');
