@@ -10,9 +10,15 @@ In order to run the API locally, clone the repository, install the dependencies 
 
 This command will run the API locally on the port : 3000
 
-## API Authorization :
+## API AUTHORIZATION :
 
-In order to use the API's endpoints, an API KEY is required in the HTTP request to consume the API, you can find a `confing.env` file that contains the key in the config folder.
+In order to consume the API please create a user and authenticate yourself to have a TOKEN, it's required on all routes.
+ADD an `Authorization` key to the request's header followed by the value `JWT ` + `TOKEN COPIED AFTER LOGIN`
+
+## API AUTHORIZATION - DEFAULT USER :
+
+email : loukachelmehdi@gmail.com
+password : ABC123EFG456
 
 ## Test the API with postman :
 

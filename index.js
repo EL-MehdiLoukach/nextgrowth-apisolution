@@ -2,10 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
-
+const jsonwebtoken = require('jsonwebtoken')
 
 // General Configuration
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors({
     credentials: true,
@@ -14,29 +15,30 @@ app.use(cors({
 }));
 app.use(require("helmet")());
 const PORT = process.env.PORT || 3000
+// JWT CONFIG
+app.use((req, res, next) => {
+    if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
+        jsonwebtoken.verify(req.headers.authorization.split(' ')[1], 'RESTFULAPIs', (err, decode) => {
+            if (err) req.user = undefined;
+            req.user = decode;
+            next();
+        });
+    } else {
+        req.user = undefined;
+        next();
+    }
+});
 // Database instance
 const connectDB = require('./config/database');
-
 // Load Config
 dotenv.config({path: './config/config.env'})
-
 connectDB();
-
 // Routes
-const ProductRoute = require('./routes/product')
-app.use('/product', ProductRoute)
-
-// Authorization function
-const apiKeyVerification = (req,res,next) => {
-    if(req.headers.authorization === process.env.API_KEY){
-        next()
-    } else {
-        return res.status(403).json({message : "access forbidden"})
-    }
-}
-// wrap api in V1 
+const {routes} = require('./routes/product')
+routes(app)
+// wrap api
 const apiV1 = express()
-apiV1.use('/api/v1', apiKeyVerification, app)
+apiV1.use('/api/v1', app)
 
 
 apiV1.listen(PORT, ()=> {

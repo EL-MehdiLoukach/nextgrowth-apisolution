@@ -26,6 +26,7 @@ const GET_PRODUCT_VARIANTS = async (req,res) => {
 
     Product.findById(req.params.id, (err, data) => {
         if(!err) {
+            
             res.send(data.variants);
         } else {
            console.log(err);
@@ -38,6 +39,7 @@ const GET_ONE_PRODUCT_VARIANT = async (req,res) => {
 
     Product.findById({_id : req.params.id, "variants.id" : req.params.vid}, (err, data) => {
         if(!err) {
+            
             res.send(data.variants);
         } else {
            console.log(err);
