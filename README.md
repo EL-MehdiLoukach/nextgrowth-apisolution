@@ -24,6 +24,8 @@ password : ABC123EFG456
 
 In the project root directory, you can find the JSON file : `nextgrowth.postman_collection.json`, which is a collection of pre-built requests for postman software, import the file into postman to save time creating the requests.
 
+https://www.postman.com/restless-spaceship-7047/workspace/nextgrowth-exercise
+
 ## You may want to browse the database to recover docments IDs to put them on POSTMAN requests.
 
 ## MongoDB database :
